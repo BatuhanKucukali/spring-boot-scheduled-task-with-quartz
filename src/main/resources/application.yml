@@ -27,6 +27,7 @@ spring:
       initialize-schema: never
     wait-for-jobs-to-complete-on-shutdown: true
     overwrite-existing-jobs: true
+    startupDelay: 10s
     properties:
       org.quartz:
         scheduler:
@@ -36,7 +37,7 @@ spring:
           class: org.quartz.impl.jdbcjobstore.JobStoreTX
           useProperties: false
           isClustered: true
-          clusterCheckinInterval: 20000
+          clusterCheckinInterval: 5000
         threadPool:
           class: org.quartz.simpl.SimpleThreadPool
           threadCount: 10
