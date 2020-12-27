@@ -15,26 +15,26 @@
 
 1 . Clone project on your machine
 
-```
+```shell
 git clone git@github.com:BatuhanKucukali/spring-boot-scheduled-task-with-quartz.git
 ```
 
 2 . Change directory
 
-```
+```shell
 cd spring-boot-scheduled-task-with-quartz
 ```
 
 3 . Run Dependencies
 
-```
-./mwnw spring-boot:run
+```shell
+docker-compose up
 ```
 
 4 . Run Project
 
-```
-./mwnw spring-boot:run
+```shell
+./mvnw spring-boot:run
 ```
 
 ## Getting help
