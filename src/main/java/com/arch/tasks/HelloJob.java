@@ -1,6 +1,5 @@
 package com.arch.tasks;
 
-import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.quartz.DisallowConcurrentExecution;
 import org.quartz.Job;
@@ -10,7 +9,6 @@ import org.springframework.stereotype.Component;
 @Slf4j
 @Component
 @DisallowConcurrentExecution
-@AllArgsConstructor
 public class HelloJob implements Job {
 
     @Override
