@@ -1,0 +1,12 @@
+version: '3.3'
+
+services:
+
+  db:
+    image: postgres:9.6.20-alpine
+    ports:
+      - "15432:5432"
+    environment:
+      POSTGRES_DB: task
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: password

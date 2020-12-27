@@ -1,0 +1,54 @@
+# Spring
+spring:
+
+  # Application
+  application:
+    name: task-service
+
+  # Datasource
+  datasource:
+    driverClassName: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:15432/task
+    username: root
+    password: password
+    type: com.zaxxer.hikari.HikariDataSource
+    initialization-mode: always
+
+  # Jpa
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: create
+
+  # Quartz
+  quartz:
+    job-store-type: jdbc
+    jdbc:
+      initialize-schema: never
+    wait-for-jobs-to-complete-on-shutdown: true
+    overwrite-existing-jobs: true
+    properties:
+      org.quartz:
+        scheduler:
+          instanceId: AUTO
+        jobStore:
+          driverDelegateClass: org.quartz.impl.jdbcjobstore.PostgreSQLDelegate
+          class: org.quartz.impl.jdbcjobstore.JobStoreTX
+          useProperties: false
+          isClustered: true
+          clusterCheckinInterval: 20000
+        threadPool:
+          class: org.quartz.simpl.SimpleThreadPool
+          threadCount: 10
+          threadPriority: 5
+          threadsInheritContextClassLoaderOfInitializingThread: true
+
+# Server
+server:
+  port: -1
+
+# Log
+logging:
+  level:
+    com:
+      arch: DEBUG
